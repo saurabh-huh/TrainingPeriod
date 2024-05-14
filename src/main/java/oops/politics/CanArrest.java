@@ -1,4 +1,4 @@
-package oops;
+package oops.politics;
 
 public class CanArrest {
     public static void main(String[] args) {

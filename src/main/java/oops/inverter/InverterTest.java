@@ -1,4 +1,4 @@
-package oops;
+package oops.inverter;
 
 public class InverterTest {
     public static void main(String[] args) {
