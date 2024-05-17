@@ -62,11 +62,11 @@ class Regalia extends SolarInverter{
         return getSolarEnergyProduced(solarRadiation);
     }
 }
-class NormalInverter{
+class NonSolarInverter{
     double current;
     double operatingVoltage;
     final double batteryCapacity;
-    public NormalInverter(double current,double operatingVoltage,double batteryCapacity){
+    public NonSolarInverter(double current,double operatingVoltage,double batteryCapacity){
         this.current = current;
         this.batteryCapacity = batteryCapacity;
         this.operatingVoltage = operatingVoltage;
@@ -76,13 +76,13 @@ class NormalInverter{
         return current * operatingVoltage;
     }
 }
-class ICruze extends NormalInverter{
+class ICruze extends NonSolarInverter{
     public ICruze(double current,double operatingVoltage,double batteryCapacity){
         super(current,operatingVoltage,batteryCapacity);
     }
 
 }
-class Zelio extends NormalInverter{
+class Zelio extends NonSolarInverter{
     public Zelio(double current,double operatingVoltage,double batteryCapacity){
         super(current,operatingVoltage,batteryCapacity);
     }
