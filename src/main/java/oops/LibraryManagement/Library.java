@@ -4,39 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Library {
-    private Catalog catalog;
-    private List<Member> members;
-
+    private CatalogManagement catalogManagement;
+    private List<LibraryMember> libraryMembers;
     public Library() {
-        this.catalog = new Catalog();
-        this.members = new ArrayList<>();
+        this.catalogManagement = new CatalogManagement();
+        this.libraryMembers = new ArrayList<>();
     }
 
     public void addBook(Book book) {
-        catalog.addBook(book);
+        catalogManagement.addBook(book);
     }
 
     public void removeBook(Book book) {
-        catalog.removeBook(book);
+        catalogManagement.removeBook(book);
     }
 
     public List<Book> searchByTitle(String title) {
-        return catalog.searchByTitle(title);
+        return catalogManagement.searchByTitle(title);
     }
 
     public List<Book> searchByAuthor(String author) {
-        return catalog.searchByAuthor(author);
+        return catalogManagement.searchByAuthor(author);
     }
 
     public List<Book> searchBySubject(String subject) {
-        return catalog.searchBySubject(subject);
+        return catalogManagement.searchBySubject(subject);
     }
 
-    public void addMember(Member member) {
-        members.add(member);
+    public void addLibraryMember(Member member,boolean membershipStatus) {
+        LibraryMember libraryMember = new LibraryMember(member,membershipStatus);
+        libraryMembers.add(libraryMember);
+    }
+    public void addLibraryMember(LibraryMember libraryMember){
+        libraryMembers.add(libraryMember);
     }
 
-    public void removeMember(Member member) {
-        members.remove(member);
+    public void removeLibraryMember(Member member,boolean membershipStatus) {
+        LibraryMember libraryMember = new LibraryMember(member,membershipStatus);
+        libraryMembers.remove(libraryMember);
+    }
+    public void removeLibraryMember(LibraryMember libraryMember){
+        libraryMembers.remove(libraryMember);
     }
 }

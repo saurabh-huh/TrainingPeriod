@@ -8,8 +8,8 @@ class Member {
     private String name;
     private String memberId;
     private int checkedOutBooksCount;
-    private List<BookItem> checkedOutBooks;
-    private List<BookItem> reservedBooks;
+    private List<BookDetail> checkedOutBooks;
+    private List<BookDetail> reservedBooks;
 
     public Member(String name, String memberId) {
         this.name = name;
@@ -26,32 +26,32 @@ class Member {
         this.reservedBooks = new ArrayList<>();
     }
 
-    // Getters and other necessary methods...
+    // Getters and setter methods
     public String getName() { return name; }
     public String getMemberId() { return memberId; }
     public int getCheckedOutBooksCount() { return checkedOutBooksCount; }
-    public List<BookItem> getCheckedOutBooks() { return checkedOutBooks; }
-    public List<BookItem> getReservedBooks() { return reservedBooks; }
+    public List<BookDetail> getCheckedOutBooks() { return checkedOutBooks; }
+    public List<BookDetail> getReservedBooks() { return reservedBooks; }
 
-    public boolean checkoutBook(BookItem bookItem) {
-        if (checkedOutBooksCount >= 5) return false;
-        checkedOutBooks.add(bookItem);
-        checkedOutBooksCount++;
-        bookItem.setAvailable(false);
-        bookItem.setDueDate(new Date(System.currentTimeMillis()+864000000)); // 10 days +
-        return true;
-    }
-
-    public boolean returnBook(BookItem bookItem) {
-        if (checkedOutBooks.remove(bookItem)) {
-            checkedOutBooksCount--;
-            bookItem.setAvailable(true);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean reserveBook(BookItem bookItem) {
-        return reservedBooks.add(bookItem);
-    }
+//    public boolean checkoutBook(BookDetail bookDetail) {
+//        if (checkedOutBooksCount >= 5) return false;
+//        checkedOutBooks.add(bookDetail);
+//        checkedOutBooksCount++;
+//        bookDetail.setAvailable(false);
+//        bookDetail.setDueDate(new Date(System.currentTimeMillis()+864000000)); // 10 days +
+//        return true;
+//    }
+//
+//    public boolean returnBook(BookDetail bookDetail) {
+//        if (checkedOutBooks.remove(bookDetail)) {
+//            checkedOutBooksCount--;
+//            bookDetail.setAvailable(true);
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    public boolean reserveBook(BookDetail bookDetail) {
+//        return reservedBooks.add(bookDetail);
+//    }
 }

@@ -8,7 +8,7 @@ class Book {
     private String subject;
     private String publicationDate;
     private String bookId;
-    private List<BookItem> bookItems;
+    private List<BookDetail> bookDetails;
 
     public Book(String title, String author, String subject, String publicationDate, String bookId) {
         this.title = title;
@@ -16,14 +16,14 @@ class Book {
         this.subject = subject;
         this.publicationDate = publicationDate;
         this.bookId = bookId;
-        this.bookItems = new ArrayList<>();
+        this.bookDetails = new ArrayList<>();
     }
 
-    // Getters and other necessary methods...
+    // Getters methods.
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getSubject() { return subject; }
     public String getPublicationDate() { return publicationDate; }
     public String getBookId() { return bookId; }
-    public List<BookItem> getBookItems() { return bookItems; }
+    public List<BookDetail> getBookDetails() { return bookDetails; }
 }

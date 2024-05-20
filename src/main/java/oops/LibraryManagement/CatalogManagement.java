@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Catalog {
+class CatalogManagement {
     private Map<String, List<Book>> booksByTitle;
     private Map<String, List<Book>> booksByAuthor;
     private Map<String, List<Book>> booksBySubject;
 
-    public Catalog() {
+    public CatalogManagement() {
         booksByTitle = new HashMap<>();
         booksByAuthor = new HashMap<>();
         booksBySubject = new HashMap<>();

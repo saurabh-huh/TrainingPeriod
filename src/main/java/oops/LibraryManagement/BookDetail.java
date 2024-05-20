@@ -2,13 +2,13 @@ package oops.LibraryManagement;
 
 import java.util.Date;
 
-class BookItem {
+class BookDetail {
     private String barcode;
     private boolean isAvailable;
     private Date dueDate;
     private String rackNumber;
 
-    public BookItem(String barcode, String rackNumber) {
+    public BookDetail(String barcode, String rackNumber) {
         this.barcode = barcode;
         this.rackNumber = rackNumber;
         this.isAvailable = true;

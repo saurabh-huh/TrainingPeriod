@@ -55,4 +55,15 @@ public class Memeber {
         return true;
     }
 
+    public boolean returnBook(BookDetail bookDetail){
+        if(checkOutBooks.remove(bookDetail)){
+            checkOutBooksCount--;
+            bookDetail.setAvailable(true);
+            return true;
+        }
+        return false;
+    }
+    public boolean reserveBook(BookDetail bookDetail){
+        return reserveBooks.add(bookDetail);
+    }
 }
